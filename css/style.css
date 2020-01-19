@@ -1,0 +1,13 @@
+body {
+    background: #eee;
+    margin:0;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+ .jumbotron {
+     background: #e5e5e5;
+     width: 50;
+     height: 100;
+     position: center;
+
+  }
