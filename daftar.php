@@ -1,3 +1,11 @@
+<?php 
+//koneksi
+include 'konek.php';
+
+if(isset($_GET["gagal"])){
+  echo "<script>alert('Gagal Menghapus Data!!!');history.go(-1);</script>";
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,18 +38,18 @@
             <form action="prosesdaftar.php" method="POST">
                 <div class="form-group">
                     <label for="name">Nama Lengkap</label>
-                    <input class="form-control" type="text" name="name" placeholder="Masukkan Nama Peserta" required/>
+                    <input class="form-control" type="text" name="name" placeholder="Masukkan Nama Peserta" onkeypress="return event.charCode < 48 || event.charCode  >57" maxlength=100 required/>
                 </div>
 
                 <div class="form-group">
                     <label for="No HP">No HP</label>
-                    <input class="form-control" type="text" name="nohp" placeholder="Masukkan No HP" required />
+                    <input class="form-control" type="text" name="nohp" placeholder="Masukkan No HP" maxlength=13 onkeypress="return hanyaAngka(event)" required />
                 </div>
                 <br>
 
                 <!-- Ini adalah Bagian Footer Modal -->
                 <div class="modal-footer">
-                <input type="submit" class="btn btn-success " name="register" value="Tambah" />
+                <input type="submit" class="btn btn-success " name="register" value="Submit" />
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
                 </div>
             </form>
@@ -75,29 +83,40 @@
  
 </body>
 <body>
-<div class="container">
-<table class="table table-bordered">
+    <div class="container">
+        <table class="table table-bordered">
 			<thead>
 				<tr>
-					<!-- <th>ID</th> -->
 					<th>Nama</th>
 					<th>No Telepon</th>
+                    <th>Aksi</th>
 				</tr>
 			</thead>
 			<tbody>
             <?php
                   include 'konek.php';
-                  $query = "select * from core order by nama asc";
+                  $query = "select * from core";
                   $sql = mysqli_query($koneksi, $query);
                   while ($row=mysqli_fetch_array($sql)){
                     echo "<tr>";
-                    //echo "<td>".$row['id']."</td>";
                     echo "<td>".$row['nama']."</td>";
-                    echo "<td>".$row['no_hp']."</td>";?></tr>
+                    echo "<td>".$row['no_hp']."</td>";?>
+                    <td><a onclick="return confirm('Apakah Anda Ingin Menghapus Data ini?')" class="btn btn-danger" href="proseshapus.php?id=<?php echo $row['id']; ?>">Hapus</a></td>
+                    </tr>
                  <?php }
                   ?> 
 			</tbody>
 		</table>
-        </div>
+    </div>
+
+    <script>
+		function hanyaAngka(evt) {
+		  var charCode = (evt.which) ? evt.which : event.keyCode
+		   if (charCode > 31 && (charCode < 48 || charCode > 57))
+ 
+		    return false;
+		  return true;
+		}
+	</script>
 </body>
 </html>
