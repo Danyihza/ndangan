@@ -79,7 +79,7 @@
 <table class="table table-bordered">
 			<thead>
 				<tr>
-					<th>ID</th>
+					<!-- <th>ID</th> -->
 					<th>Nama</th>
 					<th>No Telepon</th>
 				</tr>
@@ -91,7 +91,7 @@
                   $sql = mysqli_query($koneksi, $query);
                   while ($row=mysqli_fetch_array($sql)){
                     echo "<tr>";
-                    echo "<td>".$row['id']."</td>";
+                    //echo "<td>".$row['id']."</td>";
                     echo "<td>".$row['nama']."</td>";
                     echo "<td>".$row['no_hp']."</td>";?></tr>
                  <?php }
