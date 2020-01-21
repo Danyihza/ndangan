@@ -30,12 +30,12 @@
             <form action="prosesdaftar.php" method="POST">
                 <div class="form-group">
                     <label for="name">Nama Lengkap</label>
-                    <input class="form-control" type="text" name="name" placeholder="Masukkan Nama Peserta" required/>
+                    <input class="form-control" type="text" name="name" placeholder="Masukkan Nama Peserta" onkeypress="return event.charCode < 48 || event.charCode  >57" maxlength=100 required/>
                 </div>
 
                 <div class="form-group">
                     <label for="No HP">No HP</label>
-                    <input class="form-control" type="text" name="nohp" placeholder="Masukkan No HP" required />
+                    <input class="form-control" type="text" name="nohp" placeholder="Masukkan No HP" maxlength=13 onkeypress="return hanyaAngka(event)" required />
                 </div>
                 <br>
 
@@ -75,8 +75,8 @@
  
 </body>
 <body>
-<div class="container">
-<table class="table table-bordered">
+    <div class="container">
+        <table class="table table-bordered">
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -98,6 +98,16 @@
                   ?> 
 			</tbody>
 		</table>
-        </div>
+    </div>
+
+    <script>
+		function hanyaAngka(evt) {
+		  var charCode = (evt.which) ? evt.which : event.keyCode
+		   if (charCode > 31 && (charCode < 48 || charCode > 57))
+ 
+		    return false;
+		  return true;
+		}
+	</script>
 </body>
 </html>
