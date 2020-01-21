@@ -49,7 +49,7 @@ if(isset($_GET["gagal"])){
 
                 <!-- Ini adalah Bagian Footer Modal -->
                 <div class="modal-footer">
-                <input type="submit" class="btn btn-success " name="register" value="Submit" />
+                <input type="submit" class="btn btn-success " name="register" value="Tambah" />
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
                 </div>
             </form>
