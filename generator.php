@@ -59,7 +59,7 @@ if (isset ($_POST["download"])) {
     //echo $field_value;
        if (!$field_value) {
            # code...      
-           header('Location: index.php');
+           header('Location: index.php?data_kosong');
        }
 }
 

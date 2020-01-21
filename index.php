@@ -5,6 +5,10 @@
 //koneksi
 include 'konek.php';
 
+if(isset($_GET["data_kosong"])){
+  echo "<script>alert('Maaf, Nomor Telepon Tidak Terdaftar!!');history.go(-1);</script>";
+}
+
 ?>
 <head>
 
@@ -46,7 +50,7 @@ include 'konek.php';
             <h1 class="mb-3">E-Certificate</h1>
             <p class="mb-5">Try Out SBMPTN 2020 <strong>by HIMASAKRA</strong></p>
             <div class="input-group input-group-newsletter">
-              <input type="text" name="no_hp" class="form-control" placeholder="Masukkan No HP...">
+              <input type="text" name="no_hp" class="form-control" maxlength=13 onkeypress="return hanyaAngka(event)" placeholder="Masukkan No HP..." required>
               <div class="input-group-append">
                 <button class="btn btn-secondary" name="download" method='POST' type="submit">Download</button> 
                                              
@@ -66,6 +70,16 @@ include 'konek.php';
 
   <!-- Custom scripts for this template -->
   <script src="js/coming-soon.min.js"></script>
+
+  <script>
+		function hanyaAngka(evt) {
+		  var charCode = (evt.which) ? evt.which : event.keyCode
+		   if (charCode > 31 && (charCode < 48 || charCode > 57))
+ 
+		    return false;
+		  return true;
+		}
+	</script>
 
 </body>
 
