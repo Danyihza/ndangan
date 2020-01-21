@@ -13,7 +13,7 @@ include 'konek.php';
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Coming Soon - Start Bootstrap Theme</title>
+  <title>E-Certificate</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -38,24 +38,27 @@ include 'konek.php';
   <div class="masthead">
     <div class="masthead-bg"></div>
     <div class="container h-100">
+      <form action="generator.php" method="post">
       <div class="row h-100">
         <div class="col-12 my-auto">
-        <p class="ml-5 text-white fixed-bottom">Copyright <i class="fas fa-copyright"></i> 2020 | Create by blablabla</p> <br>        
+        <p class="ml-5 text-white fixed-bottom">Copyright <i class="fas fa-copyright"></i> 2020 | Create by blablabla </p> <br>        
           <div class="masthead-content text-white py-5 py-md-0">
             <h1 class="mb-3">E-Certificate</h1>
             <p class="mb-5">Try Out SBMPTN 2020 <strong>by HIMASAKRA</strong></p>
             <div class="input-group input-group-newsletter">
-              <input type="text" class="form-control" placeholder="Masukkan No HP..." aria-label="Enter email..." aria-describedby="basic-addon">
+              <input type="text" name="no_hp" class="form-control" placeholder="Masukkan No HP...">
               <div class="input-group-append">
-                <button class="btn btn-secondary" type="button">Download</button>                              
+                <button class="btn btn-secondary" name="download" method='POST' type="submit">Download</button> 
+                                             
             </div>      
             </div>
           </div>
         </div>
+        </form>
       </div>
-    </div>
+</div>
   </div>
- 
+
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

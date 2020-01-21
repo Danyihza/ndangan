@@ -9,12 +9,6 @@ if (isset ($_POST["register"])) {
 $sql="INSERT INTO core (nama,no_hp) VALUES('$nama','$nohp')";
 $result=mysqli_query($koneksi, $sql); 
 
-if ($result) {
-    # code...
-    echo "data masuk";
-
-}else {
-    echo "data gagal";
-}
+header('Location: regis.php');
 
 ?>
