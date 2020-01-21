@@ -95,7 +95,7 @@ if(isset($_GET["gagal"])){
 			<tbody>
             <?php
                   include 'konek.php';
-                  $query = "select * from core";
+                  $query = "select * from core order by nama asc";
                   $sql = mysqli_query($koneksi, $query);
                   while ($row=mysqli_fetch_array($sql)){
                     echo "<tr>";
