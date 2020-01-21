@@ -1,3 +1,11 @@
+<?php 
+//koneksi
+include 'konek.php';
+
+if(isset($_GET["gagal"])){
+  echo "<script>alert('Gagal Menghapus Data!!!');history.go(-1);</script>";
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,9 +87,9 @@
         <table class="table table-bordered">
 			<thead>
 				<tr>
-					<!-- <th>ID</th> -->
 					<th>Nama</th>
 					<th>No Telepon</th>
+                    <th>Aksi</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -91,9 +99,10 @@
                   $sql = mysqli_query($koneksi, $query);
                   while ($row=mysqli_fetch_array($sql)){
                     echo "<tr>";
-                    //echo "<td>".$row['id']."</td>";
                     echo "<td>".$row['nama']."</td>";
-                    echo "<td>".$row['no_hp']."</td>";?></tr>
+                    echo "<td>".$row['no_hp']."</td>";?>
+                    <td><a onclick="return confirm('Apakah Anda Ingin Menghapus Data ini?')" class="btn btn-danger" href="proseshapus.php?id=<?php echo $row['id']; ?>">Hapus</a></td>
+                    </tr>
                  <?php }
                   ?> 
 			</tbody>

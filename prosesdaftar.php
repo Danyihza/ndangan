@@ -1,7 +1,7 @@
 <?php 
 include 'konek.php';
 
-if (isset ($_POST["register"])) {
+if (isset($_POST["register"])) {
     # code...
     $nama=$_POST['name'];
     $nohp=$_POST['nohp'];
