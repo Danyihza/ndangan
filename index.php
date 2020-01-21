@@ -52,8 +52,7 @@ if(isset($_GET["data_kosong"])){
             <div class="input-group input-group-newsletter">
               <input type="text" name="no_hp" class="form-control" maxlength=13 onkeypress="return hanyaAngka(event)" placeholder="Masukkan No HP..." required>
               <div class="input-group-append">
-                <button class="btn btn-secondary" name="download" method='POST' type="submit"><i class="fas fa-fw fa-download"></i></button> 
-                                             
+                <button class="btn btn-secondary" name="download" method='POST' type="submit"><i class="fas fa-fw fa-download"></i></button>                                            
             </div>      
             </div>
           </div>
