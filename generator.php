@@ -22,7 +22,7 @@ require ('fpdf/fpdf.php');
 function Header()
 {
     // Logo
-    $this->Image('img/s.jpg',0,0,29.7);
+    // $this->Image('img/s.jpg',0,0,29.7);
     // Arial bold 15
     $this->SetFont('Arial','B',34);
     // Move to the right
@@ -66,8 +66,9 @@ if (isset ($_POST["download"])) {
 $pdf = new PDF('L','cm','A4');
 $pdf->AliasNbPages();
 $pdf->AddPage();
-$pdf->SetFont('Times','B',34);
-$pdf->Cell(0,16,' ' . $field_value,0,0,'C');
+$pdf->Image('img/s.jpg',0,0,29.7,21.0,'JPG');
+$pdf->SetFont('Times','B',28);
+$pdf->Cell(0,17,'' . $field_value,0,0,'C');
 $pdf->Output('I','E-Certificate TRY OUT SBMPTN 2020 by HIMASAKRA.pdf');
 
 
