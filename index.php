@@ -50,7 +50,7 @@ if(isset($_GET["data_kosong"])){
             <h1 class="mb-3">E-Certificate</h1>
             <p class="mb-5">Try Out SBMPTN 2020 <strong>by HIMASAKRA</strong></p>
             <div class="input-group input-group-newsletter">
-              <input type="text" name="no_hp" class="form-control" maxlength=13 onkeypress="return hanyaAngka(event)" placeholder="Masukkan No HP..." required>
+              <input type="number" name="no_hp" class="form-control" maxlength=13 onkeypress="return hanyaAngka(event)" placeholder="Masukkan No HP..." required>
               <div class="input-group-append">
                 <button class="btn btn-secondary" name="download" method='POST' type="submit"><i class="fas fa-fw fa-download"></i></button>                                            
             </div>      

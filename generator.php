@@ -66,9 +66,9 @@ if (isset ($_POST["download"])) {
 $pdf = new PDF('L','cm','A4');
 $pdf->AliasNbPages();
 $pdf->AddPage();
-$pdf->Image('img/s.jpg',0,0,29.7,21.0,'JPG');
-$pdf->SetFont('Times','B',28);
-$pdf->Cell(0,17,'' . $field_value,0,0,'C');
+$pdf->Image('img/s.jpeg',0,0,29.7,21.0,'JPEG');
+$pdf->SetFont('Times','B',30);
+$pdf->Cell(8,16.5,'  ' . $field_value,0,0,'L');
 $pdf->Output('I','E-Certificate TRY OUT SBMPTN 2020 by HIMASAKRA.pdf');
 
 
