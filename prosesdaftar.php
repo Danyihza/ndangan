@@ -7,7 +7,7 @@ if (isset($_POST["register"])) {
     $nohp=$_POST['nohp'];
 }
 
-    $cekdulu= "select * from core where nama='$nama' and no_hp='$nohp'"; //username dan $_POST[un] diganti sesuai dengan yang kalian gunakan
+    $cekdulu= "select * from core where nama='$nama' or no_hp='$nohp'"; //username dan $_POST[un] diganti sesuai dengan yang kalian gunakan
     $prosescek= mysqli_query($koneksi, $cekdulu);
     if(mysqli_num_rows($prosescek)>0) { //proses mengingatkan data sudah ada
         echo "<script>alert('Peserta Sudah Terdaftar!!');history.go(-1) </script>";
