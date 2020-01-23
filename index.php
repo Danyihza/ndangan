@@ -6,7 +6,7 @@
 include 'konek.php';
 
 if(isset($_GET["data_kosong"])){
-  echo "<script>alert('Maaf, Nomor Hp Tidak Benar!!');history.go(-1);</script>";
+  echo "<script>alert('Mohon Maaf No Hp yang anda masukkan salah silahkan masukkan dengan benar!');history.go(-1);</script>";
 }
 
 ?>
