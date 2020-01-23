@@ -6,7 +6,7 @@
 include 'konek.php';
 
 if(isset($_GET["data_kosong"])){
-  echo "<script>alert('Maaf, Nomor Telepon Tidak Terdaftar!!');history.go(-1);</script>";
+  echo "<script>alert('Maaf, Nomor Hp Tidak Benar!!');history.go(-1);</script>";
 }
 
 ?>
@@ -29,6 +29,7 @@ if(isset($_GET["data_kosong"])){
 
   <!-- Custom styles for this template -->
   <link href="css/coming-soon.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -53,8 +54,14 @@ if(isset($_GET["data_kosong"])){
               <input type="number" name="no_hp" class="form-control" maxlength=13 onkeypress="return hanyaAngka(event)" placeholder="Masukkan No HP..." required>
               <div class="input-group-append">
                 <button class="btn btn-secondary" name="download" method='POST' type="submit"><i class="fas fa-fw fa-download"></i></button>                                            
-            </div>      
-            </div>
+              </div>      
+            </div>            
+            <div class="row">
+              <div class="col">              
+                <p>Untuk Melihat Ranking Silahkan Klik Tombol dibawah ini</p>
+                <a href="#" class='btn btn-secondary tombol'><i class="fas fa-fw fa-file-alt"></i> | Lihat Ranking</a>
+              </div>
+            </div>            
           </div>
         </div>
         </form>
