@@ -2,9 +2,11 @@
 include 'konek.php';
 
     $id=$_GET['id'];
-    $query = "SELECT * FROM core WHERE id='".$id."'";
-    $sql = mysqli_query($koneksi, $query); // Eksekusi/Jalankan query dari variabel $query
-    $data = mysqli_fetch_array($sql);
+    echo $id;
+    die;
+    // $query = "SELECT * FROM core WHERE id='".$id."'";
+    // $sql = mysqli_query($koneksi, $query); // Eksekusi/Jalankan query dari variabel $query
+    // $data = mysqli_fetch_array($sql);
 
         $query2 = "DELETE FROM core WHERE id='".$id."'";
         $sql2 = mysqli_query($koneksi, $query2);

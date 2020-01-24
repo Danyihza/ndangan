@@ -54,7 +54,7 @@ if (isset ($_POST["download"])) {
     //print $no_hp;
     $sql="SELECT nama FROM core WHERE no_hp = '$no_hp'";
     $result=mysqli_query($koneksi, $sql);
-    $resultarr = mysqli_fetch_assoc($result);
+    $resultarr = mysqli_fetch_assoc($result);    
     $field_value=$resultarr['nama']; 
     //echo $field_value;
        if (!$field_value) {
@@ -68,7 +68,7 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->Image('img/s.jpeg',0,0,29.7,21.0,'JPEG');
 $pdf->SetFont('Times','B',30);
-$pdf->Cell(8,16.5,'  ' . $field_value,0,0,'L');
+$pdf->Cell(8,16.5,'  ' . ucwords($field_value),0,0,'L');
 $pdf->Output('I','E-Certificate TRY OUT SBMPTN 2020 by HIMASAKRA.pdf');
 
 
