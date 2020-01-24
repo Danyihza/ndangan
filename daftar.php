@@ -4,6 +4,8 @@ include 'konek.php';
 
 if(isset($_GET["gagal"])){
   echo "<script>alert('Gagal Menghapus Data!!!');history.go(-1);</script>";
+}else if(isset($_GET["gagal_edit"])){
+  echo "<script>alert('Gagal Mengubah Data!!!');history.go(-1);</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -89,7 +91,7 @@ if(isset($_GET["gagal"])){
 				<tr>
 					<th>Nama</th>
 					<th>No Telepon</th>
-                    <th>Aksi</th>
+          <th>Aksi</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -101,8 +103,53 @@ if(isset($_GET["gagal"])){
                     echo "<tr>";
                     echo "<td>".$row['nama']."</td>";
                     echo "<td>".$row['no_hp']."</td>";?>
-                    <td><a onclick="return confirm('Apakah Anda Ingin Menghapus Data ini?')" class="btn btn-danger" href="proseshapus.php?id=<?php echo $row['id']; ?>">Hapus</a></td>
+                    <td><a onclick="return confirm('Apakah Anda Ingin Menghapus Data ini?')" class="btn btn-danger" href="proseshapus.php?id=<?php echo $row['id']; ?>">Hapus</a>
+                    <a type="button" class="btn btn-primary" href="#" data-target="#modalpesanan<?php echo $row['id'];?>" data-toggle="modal">Edit</a></td>
                     </tr>
+                    <!-- The Modal -->
+                    <div class="modal fade" id="modalpesanan<?php echo $row['id'];?>">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                          
+                            <!-- Ini adalah Bagian Header Modal -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">ID <?php echo $row['id'];?></h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            
+                            <!-- Ini adalah Bagian Body Modal -->
+                            <div class="modal-body">
+                                <form action="prosesedit.php" method="get">
+                                    <?php
+                                    $id=$row['id'];
+                                    $kueri="SELECT * FROM core WHERE id=$id";
+                                    $sqll=mysqli_query($koneksi, $kueri);
+                                    while($data=mysqli_fetch_array($sqll)){
+                                    ?>
+                                    <input class="form-control" type="number" name="id" value="<?php echo $data['id'];?>" hidden required/>
+                                    
+                                    <div class="form-group">
+                                        <label for="name">Nama Lengkap</label>
+                                        <input class="form-control" type="text" name="nama" value="<?php echo $data['nama'];?>"  required/>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="No HP">No HP</label>
+                                        <input class="form-control" type="text" name="no_hp" value="<?php echo $data['no_hp'];?>"  required />
+                                    </div>
+                                    <br>
+                                    <?php }
+                                      ?> 
+                                    <!-- Ini adalah Bagian Footer Modal -->
+                                    <div class="modal-footer">
+                                    <input type="submit" class="btn btn-success " name="edit" value="Edit" />
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                                    </div>
+                                </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                  <?php }
                   ?> 
 			</tbody>
