@@ -58,8 +58,11 @@ if(isset($_GET["data_kosong"])){
             </div>            
             <div class="row">
               <div class="col">              
-                <p>Untuk Melihat Ranking Silahkan Klik Tombol dibawah ini</p>
-                <a href="#" class='btn btn-secondary tombol'><i class="fas fa-fw fa-file-alt"></i> | Lihat Ranking</a>
+                <!-- <p>Silahkan klik tombol dibawah ini untuk melihat ranking</p> -->
+                <p>Mohon Maaf Ranking Belom Tersedia</p>
+                <!-- <button type="button" class="btn btn-secondary buttonku"><i class="fas fa-fw fa-file-alt"></i> | Lihat Ranking</button> -->
+               <a href="#" class="btn btn-secondary tombol buttonku"><i class="fas fa-fw fa-file-alt"></i> | Lihat Ranking</a>
+               <!-- <a href="#" class="btn btn-secondary tombol" disabled><i class="fas fa-fw fa-file-alt"></i> | Lihat Ranking</a> -->
               </div>
             </div>            
           </div>

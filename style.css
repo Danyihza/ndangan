@@ -2,3 +2,38 @@
     margin-top: -10px;
 }
 
+.buttonku {                
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;    
+    padding: 5px 10px;    
+    text-decoration: none;
+    -webkit-animation: glowing 1500ms infinite;
+    -moz-animation: glowing 1500ms infinite;
+    -o-animation: glowing 1500ms infinite;
+    animation: glowing 1500ms infinite;
+  }
+  @-webkit-keyframes glowing {
+    0% { background-color: #cd9557; -webkit-box-shadow: 0 0 3px #cd9557; }
+    50% { background-color: #d4a773; -webkit-box-shadow: 0 0 40px #d4a773; }
+    100% { background-color: #cd9557; -webkit-box-shadow: 0 0 3px #cd9557; }
+  }
+  
+  @-moz-keyframes glowing {
+    0% { background-color: #cd9557; -moz-box-shadow: 0 0 3px #cd9557; }
+    50% { background-color: #d4a773; -moz-box-shadow: 0 0 40px #d4a773; }
+    100% { background-color: #cd9557; -moz-box-shadow: 0 0 3px #cd9557; }
+  }
+  
+  @-o-keyframes glowing {
+    0% { background-color: #cd9557; box-shadow: 0 0 3px #cd9557; }
+    50% { background-color: #d4a773; box-shadow: 0 0 40px #d4a773; }
+    100% { background-color: #cd9557; box-shadow: 0 0 3px #cd9557; }
+  }
+  
+  @keyframes glowing {
+    0% { background-color: #cd9557; box-shadow: 0 0 3px #cd9557; }
+    50% { background-color: #d4a773; box-shadow: 0 0 40px #d4a773; }
+    100% { background-color: #cd9557; box-shadow: 0 0 3px #cd9557; }
+  }
+
