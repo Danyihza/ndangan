@@ -68,7 +68,7 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->Image('img/s.jpeg',0,0,29.7,21.0,'JPEG');
 $pdf->SetFont('Times','B',30);
-$pdf->Cell(8,16.5,'  ' . $field_value,0,0,'L');
+$pdf->Cell(8,16.5,'  ' . ucwords($field_value),0,0,'L');
 $pdf->Output('I','E-Certificate TRY OUT SBMPTN 2020 by HIMASAKRA.pdf');
 
 

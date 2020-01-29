@@ -3,7 +3,7 @@ include 'konek.php';
 
 if (isset($_POST["register"])) {
     # code...
-    $nama=$_POST['name'];
+    $nama=addslashes($_POST['name']);
     $nohp=$_POST['nohp'];
 }
 

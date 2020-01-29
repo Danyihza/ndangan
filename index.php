@@ -62,7 +62,8 @@ if(isset($_GET["data_kosong"])){
                 <p>Mohon Maaf Ranking Belom Tersedia</p>
                 <!-- <button type="button" class="btn btn-secondary buttonku"><i class="fas fa-fw fa-file-alt"></i> | Lihat Ranking</button> -->
                <!-- <a href="#" class="btn btn-secondary tombol buttonku"><i class="fas fa-fw fa-file-alt"></i> | Lihat Ranking</a> -->
-               <a href="#" class="btn btn-secondary tombol" disabled><i class="fas fa-fw fa-file-alt"></i> | Lihat Ranking</a>
+               <a href="doc/HASIL TRYOUT SBMPTN 2020 SAINTEK.pdf" class="btn btn-secondary tombol buttonku"><i class="fas fa-fw fa-file-alt"></i> | Lihat Ranking Saintek</a>
+               <a href="doc/HASIL TRYOUT SBMPTN 2020 SOSHUM.pdf" class="btn btn-secondary tombol buttonku"><i class="fas fa-fw fa-file-alt"></i> | Lihat Ranking Soshum</a>
               </div>
             </div>            
           </div>
